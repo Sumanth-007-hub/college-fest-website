@@ -8,148 +8,333 @@
   
 
   
+
 <style>
-  * {
-    box-sizing: border-box;
-  }
+* {
+  box-sizing: border-box;
+}
 
-  html {
-    scroll-behavior: smooth;
-  }
+html {
+  scroll-behavior: smooth;
+}
 
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f7f5ff;
-    color: #211547;
-    line-height: 1.6;
-  }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #080923;
+  color: white;
+}
 
-  header {
-    background: linear-gradient(135deg, #17113b, #6538cf);
-    color: white;
-    text-align: center;
-    padding: 65px 20px;
-  }
+header {
+  text-align: center;
+  padding: 22px;
+  background: #10102f;
+  border-bottom: 1px solid #633cff;
+}
 
-  header h1 {
-    font-size: clamp(36px, 7vw, 64px);
-    color: #ffe66d;
-    margin: 0 0 12px;
-    letter-spacing: 2px;
-  }
+header h1 {
+  color: #ffe84d;
+  font-size: clamp(36px, 6vw, 64px);
+  margin: 10px;
+  animation: titleGlow 2s infinite alternate;
+}
 
-  header h2 {
-    font-size: clamp(19px, 3vw, 28px);
-    margin: 0 0 12px;
-  }
+header h2 {
+  color: white;
+  margin: 8px;
+}
 
-  header p {
-    color: #e8e2ff;
-    font-size: 17px;
-  }
+header p {
+  color: #d9d4ff;
+}
 
-  section {
-    background: white;
-    margin: 28px auto;
-    padding: 30px;
-    width: 90%;
-    max-width: 900px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px #25164b12;
-    border: 1px solid #ebe5ff;
-  }
+nav {
+  padding: 12px;
+}
 
-  section h2 {
-    color: #7148ff;
-    margin-top: 0;
-    font-size: 27px;
-  }
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 12px;
+}
 
-  li {
-    padding: 8px 0;
-  }
+.hero {
+  min-height: 420px;
+  padding: 70px 8%;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(90deg, #080923 8%, #080923dd 42%, #08092333),
+    url("https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&w=1600&q=85")
+    center/cover;
+}
 
-  .register {
-    display: inline-block;
-    background: #ff4fa3;
-    color: white;
-    padding: 13px 23px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: transform 0.2s, background 0.2s;
-  }
+.hero-content {
+  max-width: 600px;
+  animation: slideIn 1s ease-out;
+}
 
-  .register:hover {
-    background: #e52e85;
-    transform: translateY(-3px);
-  }
+.hero h2 {
+  font-size: clamp(35px, 6vw, 62px);
+  line-height: 1.1;
+  margin: 12px 0;
+}
 
-  footer {
-    background: #17113b;
-    color: white;
-    text-align: center;
-    padding: 25px 15px;
-  }
+.hero h2 span {
+  color: #ffe84d;
+}
 
-  @media (max-width: 600px) {
-    header {
-      padding: 45px 16px;
-    }
+.hero p {
+  color: #e0ddff;
+  line-height: 1.8;
+}
 
-    section {
-      width: 92%;
-      padding: 22px;
-      margin: 20px auto;
-    }
-  }
+.button {
+  display: inline-block;
+  margin: 12px 8px 0 0;
+  padding: 13px 22px;
+  border-radius: 30px;
+  background: #ffe84d;
+  color: #10102f;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform .25s, box-shadow .25s;
+}
 
+.button:hover {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 0 22px #ffe84d88;
+}
 
+section {
+  padding: 45px 7%;
+  scroll-margin-top: 20px;
+}
+
+section > h2 {
+  color: #ffe84d;
+  font-size: 30px;
+}
+
+.events {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #111333;
+  border: 1px solid #633cff;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform .3s, box-shadow .3s;
+}
+
+.card:hover {
+  transform: translateY(-9px);
+  box-shadow: 0 0 25px #713dff66;
+}
+
+.card img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-content {
+  padding: 16px;
+}
+
+.card h3 {
+  margin-top: 0;
+  color: #ff70cf;
+}
+
+.card p {
+  color: #d7d5ef;
+  line-height: 1.6;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.panel {
+  background: #111333;
+  border: 1px solid #633cff;
+  border-radius: 16px;
+  padding: 22px;
+}
+
+.panel h2 {
+  color: #ffe84d;
+}
+
+.schedule-item {
+  padding: 12px 0;
+  border-bottom: 1px solid #34345b;
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 13px;
+  margin: 8px 0;
+  border: 1px solid #633cff;
+  border-radius: 8px;
+  background: #080923;
+  color: white;
+}
+
+form button {
+  border: 0;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  padding: 24px;
+  background: #10102f;
+  border-top: 1px solid #633cff;
+  color: #d7d5ef;
+}
+
+@keyframes titleGlow {
+  from { text-shadow: 0 0 5px #ffe84d44; }
+  to { text-shadow: 0 0 22px #ffe84d; }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 850px) {
+  .events { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 550px) {
+  .events, .info-grid { grid-template-columns: 1fr; }
+  .hero { padding: 50px 7%; }
+}
 </style>
+
 
 </head>
 <body>
   
+
 <header>
-  <h1>COLLEGE FEST 2026</h1>
-  <h2 style="color:white">One Campus. Endless Energy.</h2>
-  <p>Music • Dance • Games • Memories</p>
+  <h1>✦ COLLEGE FEST 2026 ✦</h1>
+  <h2>One Campus. Endless Energy.</h2>
+  <p>Music • Dance • Games • Culture</p>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#events">Events</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#register">Register</a>
+  </nav>
 </header>
 
-<section>
-  <h2>Welcome to the Fest!</h2>
-  <p>Get ready for an unforgettable celebration of talent,
-  creativity, music, and fun.</p>
-</section>
+<main>
+  <div class="hero" id="home">
+    <div class="hero-content">
+      <p>THE CAMPUS COMES ALIVE</p>
+      <h2>Make Memories.<br><span>Feel The Energy.</span></h2>
+      <p>
+        Get ready for an unforgettable celebration of music,
+        dance, creativity and campus spirit!
+      </p>
+      <a class="button" href="#register">Register Now →</a>
+      <a class="button" href="#events">Explore Events ↓</a>
+    </div>
+  </div>
 
-<section>
-  <h2>Our Events 🎉</h2>
-  <ul>
-    <li>🎤 Music and Live Performances</li>
-    <li>💃 Dance Competition</li>
-    <li>🎮 Games and Challenges</li>
-    <li>🎭 Cultural Events</li>
-  </ul>
-</section>
+  <section id="events">
+    <h2>✦ Our Events</h2>
+    <p>Something for everyone. Find your vibe!</p>
 
-<section>
-  <h2>Event Details 📅</h2>
-  <p><strong>Date:</strong> To Be Announced</p>
-  <p><strong>Venue:</strong> College Campus</p>
-</section>
+    <div class="events">
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=700&q=80" alt="Live music festival">
+        <div class="card-content">
+          <h3>🎤 Music</h3>
+          <p>Live performances, band battles and open mic sessions.</p>
+        </div>
+      </article>
 
-<section>
-  <h2>Join the Celebration!</h2>
-  <p>Interested in participating? Contact the fest organizers.</p>
-  <a class="register" href="mailto:fest@example.com">
-    Register Your Interest
-  </a>
-</section>
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1504609813442-a8924e83f76e?auto=format&fit=crop&w=700&q=80" alt="Dance performance">
+        <div class="card-content">
+          <h3>💃 Dance</h3>
+          <p>Solo, group and freestyle dance competitions.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=700&q=80" alt="Gaming event">
+        <div class="card-content">
+          <h3>🎮 Games</h3>
+          <p>Fun games, team challenges and exciting prizes.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=700&q=80" alt="Stage performance">
+        <div class="card-content">
+          <h3>🎭 Cultural Events</h3>
+          <p>Drama, fashion, art, debate and more!</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="info-grid">
+    <div class="panel" id="schedule">
+      <h2>📅 Event Schedule</h2>
+      <div class="schedule-item">09:00 AM — Inauguration</div>
+      <div class="schedule-item">11:00 AM — Music & Dance</div>
+      <div class="schedule-item">02:00 PM — Games & Competitions</div>
+      <div class="schedule-item">04:00 PM — Cultural Events & Finale</div>
+      <p>Date: To Be Announced</p>
+      <p>Venue: College Campus</p>
+    </div>
+
+    <div class="panel" id="register">
+      <h2>🎟 Register Now</h2>
+      <p>Choose your favourite event!</p>
+      <form id="fest-form">
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <select required>
+          <option value="">Select Event</option>
+          <option>Music</option>
+          <option>Dance</option>
+          <option>Games</option>
+          <option>Cultural Events</option>
+        </select>
+        <button class="button" type="submit">Submit Registration →</button>
+        <p id="form-message" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</main>
 
 <footer>
-  <p>© 2026 College Fest Management</p>
+  <p>✦ COLLEGE FEST 2026 ✦</p>
+  <p>One Campus. Endless Energy.</p>
 </footer>
+
+<script>
+  document.getElementById("fest-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    document.getElementById("form-message").textContent =
+      "Thanks! Your demo submission was received on this page.";
+  });
+</script>
 
 </body>
 </html>
