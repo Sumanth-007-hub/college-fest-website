@@ -6,59 +6,106 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>College Fest 2026</title>
   
+
+  
 <style>
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #f4f0ff;
+    background: #f7f5ff;
     color: #211547;
+    line-height: 1.6;
   }
 
   header {
-    background-color: #211547;
+    background: linear-gradient(135deg, #17113b, #6538cf);
     color: white;
     text-align: center;
-    padding: 25px;
+    padding: 65px 20px;
   }
 
-  h1 {
-    font-size: 42px;
+  header h1 {
+    font-size: clamp(36px, 7vw, 64px);
     color: #ffe66d;
+    margin: 0 0 12px;
+    letter-spacing: 2px;
+  }
+
+  header h2 {
+    font-size: clamp(19px, 3vw, 28px);
+    margin: 0 0 12px;
+  }
+
+  header p {
+    color: #e8e2ff;
+    font-size: 17px;
   }
 
   section {
     background: white;
-    margin: 25px auto;
-    padding: 25px;
-    max-width: 800px;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px #00000012;
+    margin: 28px auto;
+    padding: 30px;
+    width: 90%;
+    max-width: 900px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px #25164b12;
+    border: 1px solid #ebe5ff;
   }
 
-  h2 {
+  section h2 {
     color: #7148ff;
+    margin-top: 0;
+    font-size: 27px;
   }
 
   li {
-    padding: 8px;
+    padding: 8px 0;
   }
 
   .register {
     display: inline-block;
     background: #ff4fa3;
     color: white;
-    padding: 12px 20px;
-    border-radius: 25px;
+    padding: 13px 23px;
+    border-radius: 30px;
     text-decoration: none;
     font-weight: bold;
+    transition: transform 0.2s, background 0.2s;
+  }
+
+  .register:hover {
+    background: #e52e85;
+    transform: translateY(-3px);
   }
 
   footer {
-    background: #211547;
+    background: #17113b;
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 25px 15px;
   }
+
+  @media (max-width: 600px) {
+    header {
+      padding: 45px 16px;
+    }
+
+    section {
+      width: 92%;
+      padding: 22px;
+      margin: 20px auto;
+    }
+  }
+
+
 </style>
 
 </head>
